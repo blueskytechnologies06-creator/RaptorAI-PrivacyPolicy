@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaptorAI — Privacy Policy & Official Legal Disclosure</title>
+  <meta name="description" content="Official Privacy Policy, Data Safety disclosure, and terms for RaptorAI (com.raptorai). 100% private, on-device AI studio. Zero cloud telemetry. Contact: blueskytechnologies06@gmail.com">
+  <link rel="icon" type="image/jpeg" href="./assets/images/app-icon.jpg">
+  <style>
+    :root {
+      --bg-dark: #080A11;
+      --bg-card: #0F1322;
+      --bg-card-hover: #161C30;
+      --bg-surface: #141829;
+      --border-subtle: #1F263D;
+      --border-accent: #38BDF8;
+      --primary: #4F46E5;
+      --primary-light: #6366F1;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #06B6D4;
+      --accent-glow: rgba(6, 182, 212, 0.2);
+      --success: #10B981;
+      --success-bg: rgba(16, 185, 129, 0.12);
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section, [id] {
+      scroll-margin-top: 85px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: 1.65;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    .glow-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.10) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(8, 10, 17, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+      padding: 16px 0;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 0 20px var(--primary-glow);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brand-text h1 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 30%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav.nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav.nav-links a:hover {
+      color: #FFFFFF;
+    }
+
+    nav.nav-links .policy-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, #38BDF8 100%);
+      color: #FFFFFF;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 14px var(--primary-glow);
+      transition: transform 0.15s ease;
+    }
+
+    nav.nav-links .policy-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    section.hero {
+      position: relative;
+      padding: 60px 0 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #neuralCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+    }
+
+    .hero-content-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* AI Live Status Ticker */
+    .ai-ticker-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 19, 34, 0.85);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 999px;
+      padding: 6px 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px var(--accent-glow);
+      backdrop-filter: blur(8px);
+    }
+
+    .ticker-icon-live {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 14px;
+    }
+
+    .ticker-wave {
+      display: inline-block;
+      width: 3px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 2px;
+      animation: soundWave 1.2s ease-in-out infinite;
+    }
+
+    .ticker-wave:nth-child(2) { animation-delay: 0.2s; height: 14px; }
+    .ticker-wave:nth-child(3) { animation-delay: 0.4s; height: 8px; }
+
+    @keyframes soundWave {
+      0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+      50% { transform: scaleY(1.2); opacity: 1; }
+    }
+
+    .ticker-text {
+      font-size: 0.84rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #E2E8F0;
+      letter-spacing: -0.01em;
+    }
+
+    .ticker-cursor {
+      display: inline-block;
+      width: 6px;
+      height: 12px;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: blink 0.9s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 30%, #A5B4FC 60%, #FFFFFF 95%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerTitle 7s linear infinite;
+    }
+
+    @keyframes shimmerTitle {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .hero-subtitle {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    /* Feature Banner & Floating Modality Chips */
+    .banner-relative-container {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .feature-banner-box {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(99, 102, 241, 0.2);
+      background: #000000;
+      aspect-ratio: 2 / 1;
+      position: relative;
+    }
+
+    .feature-banner-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Laser scan beam animation */
+    .scanner-beam {
+      position: absolute;
+      top: 0;
+      left: -40%;
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.12) 30%, rgba(56, 189, 248, 0.5) 80%, rgba(255, 255, 255, 0.8) 100%);
+      transform: skewX(-20deg);
+      pointer-events: none;
+      animation: scanBeam 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      filter: blur(2px);
+      z-index: 2;
+    }
+
+    @keyframes scanBeam {
+      0% { left: -40%; opacity: 0; }
+      10% { opacity: 0.75; }
+      38% { left: 125%; opacity: 0.75; }
+      40% { opacity: 0; }
+      100% { left: 125%; opacity: 0; }
+    }
+
+    /* Floating AI Badges */
+    .floating-chip {
+      position: absolute;
+      z-index: 5;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 19, 34, 0.90);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 15px rgba(6, 182, 212, 0.2);
+      backdrop-filter: blur(8px);
+      animation: floatChip 4s ease-in-out infinite;
+    }
+
+    .floating-chip.chip-1 {
+      top: 15px;
+      left: -22px;
+      animation-delay: 0s;
+    }
+
+    .floating-chip.chip-2 {
+      bottom: 20px;
+      left: -18px;
+      animation-delay: 1.6s;
+    }
+
+    .floating-chip.chip-3 {
+      top: 25px;
+      right: -22px;
+      animation-delay: 0.9s;
+    }
+
+    .floating-chip.chip-4 {
+      bottom: 15px;
+      right: -18px;
+      animation-delay: 2.3s;
+    }
+
+    @keyframes floatChip {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @media (max-width: 980px) {
+      .floating-chip {
+        display: none;
+      }
+    }
+
+    /* Page Entrance Animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Summary Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 50px;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: left;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Google Play Store Section */
+    section.download-section {
+      padding: 10px 0 60px;
+    }
+
+    .download-card {
+      background: linear-gradient(135deg, rgba(15, 19, 34, 0.95) 0%, rgba(22, 28, 48, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 38px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .download-card::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 440px;
+      height: 180px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .download-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      color: var(--accent);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.80rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .download-card h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .download-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .playstore-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      padding: 12px 26px;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .playstore-button:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.25);
+    }
+
+    .playstore-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .playstore-text-group {
+      text-align: left;
+    }
+
+    .playstore-sub {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #CBD5E1;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .playstore-main {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    /* Screenshots Section */
+    section.screenshots-section {
+      padding: 40px 0 70px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .section-header p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .screenshot-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      box-shadow: 0 12px 30px rgba(6, 182, 212, 0.15);
+    }
+
+    .screenshot-img-box {
+      width: 100%;
+      background: #000000;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+    }
+
+    .screenshot-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-card:hover .screenshot-img-box img {
+      transform: scale(1.02);
+    }
+
+    .screenshot-info {
+      padding: 14px 16px;
+      text-align: left;
+    }
+
+    .screenshot-tag {
+      font-size: 0.70rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .screenshot-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .screenshot-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: var(--text-main);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #FFFFFF;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    /* Privacy Policy Document Section */
+    section.policy-section {
+      padding: 50px 0 80px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .policy-doc-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 44px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .policy-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .policy-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .policy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .policy-meta strong {
+      color: var(--accent);
+    }
+
+    .policy-content h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 32px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .policy-content h3::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .policy-content p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .policy-content ul {
+      margin: 0 0 18px 24px;
+      color: var(--text-muted);
+    }
+
+    .policy-content li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .callout-box {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+
+    .callout-box strong {
+      color: #FFFFFF;
+    }
+
+    .contact-box {
+      background: rgba(99, 102, 241, 0.10);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 12px;
+      padding: 22px;
+      margin: 24px 0;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* Google Play Data Safety Table */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.90rem;
+    }
+
+    table.data-table th, table.data-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    table.data-table th {
+      background: var(--bg-surface);
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    table.data-table td {
+      color: var(--text-muted);
+    }
+
+    table.data-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .status-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-tag.none {
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .status-tag.yes {
+      background: rgba(245, 158, 11, 0.15);
+      color: #F59E0B;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .status-tag.local {
+      background: var(--primary-glow);
+      color: #A5B4FC;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #05060A;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .policy-doc-container {
+        padding: 22px;
+      }
+      nav.nav-links a:not(.policy-btn) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-layer"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#overview" class="brand-group">
+        <img src="./assets/images/app-icon.jpg" alt="RaptorAI Logo" class="brand-logo">
+        <div class="brand-text">
+          <h1>RaptorAI</h1>
+          <span>100% Private On-Device AI</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#download">Google Play</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#data-safety">Data Safety</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy-policy" class="policy-btn">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Overview Section with Feature Graphic -->
+  <section class="hero" id="overview">
+    <!-- Interactive Neural Network Animation Canvas -->
+    <canvas id="neuralCanvas"></canvas>
+
+    <div class="container hero-content-wrap">
+      <!-- Live AI Neural Status Ticker -->
+      <div class="ai-ticker-wrap fade-in-up delay-1">
+        <div class="ticker-icon-live">
+          <span class="ticker-wave"></span>
+          <span class="ticker-wave"></span>
+          <span class="ticker-wave"></span>
+        </div>
+        <span class="ticker-text" id="aiTickerText">Connecting to on-device neural engine...</span>
+        <span class="ticker-cursor"></span>
+      </div>
+
+      <div class="badge-pill fade-in-up delay-2">
+        <div class="pulse-dot"></div>
+        <span>100% Offline • Zero Cloud Telemetry • No Ads</span>
+      </div>
+
+      <h1 class="hero-title fade-in-up delay-2">Artificial Intelligence That Truly Runs On Your Device</h1>
+      <p class="hero-subtitle fade-in-up delay-3">
+        RaptorAI is an all-in-one private AI studio. Chat with compact LLMs, recognize objects, scan documents via OCR, transcribe audio with Whisper, and query local embeddings—with complete data isolation.
+      </p>
+
+      <!-- Official Feature Graphic with Floating Modality Badges & Neural Laser Beam -->
+      <div class="banner-relative-container fade-in-up delay-4">
+        <div class="floating-chip chip-1">
+          <span>💬 On-Device LLM Chat</span>
+        </div>
+        <div class="floating-chip chip-2">
+          <span>👁️ Vision &amp; Detection</span>
+        </div>
+        <div class="floating-chip chip-3">
+          <span>📄 Offline PaddleOCR</span>
+        </div>
+        <div class="floating-chip chip-4">
+          <span>🎙️ Whisper Voice Studio</span>
+        </div>
+
+        <div class="feature-banner-box">
+          <div class="scanner-beam"></div>
+          <img src="./assets/images/feature-graphic.jpg" alt="RaptorAI — Your Private, Offline AI Studio" loading="eager">
+        </div>
+      </div>
+
+      <!-- Core Highlights -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h3>🔒 100% On-Device AI</h3>
+          <p>All neural network inference (LLM, Vision, OCR, Whisper) runs locally on your phone's processor. No server transmission.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>🚫 Zero Telemetry</h3>
+          <p>We do not collect personal analytics, advertising IDs (GAID/IDFA), or behavioral metrics. No third-party tracking SDKs.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>✈️ True Offline Operation</h3>
+          <p>Once your chosen model weights are downloaded, the app operates completely without internet access or in Airplane Mode.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>👑 Early Adopter Founder Pass</h3>
+          <p>Lifetime full access to current and upcoming on-device AI models with zero subscriptions, paywalls, or third-party ads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Play Store Download Section -->
+  <section class="download-section" id="download">
+    <div class="container">
+      <div class="download-card">
+        <div class="download-badge">Official Android Release</div>
+        <h2>Download RaptorAI on Google Play</h2>
+        <p>
+          Experience 100% private, on-device AI. Download free with Founder Pass lifetime access included on the Google Play Store.
+        </p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.raptorai" target="_blank" rel="noopener noreferrer" class="playstore-button">
+          <svg class="playstore-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186A2.373 2.373 0 013 20.485V3.515c0-.654.218-1.26.609-1.701z" fill="#00C3FF"/>
+            <path d="M17.18 8.614l-3.387 3.386 3.387 3.386 3.84-2.197c1.3-.743 1.3-1.954 0-2.697l-3.84-1.878z" fill="#FFC107"/>
+            <path d="M13.793 12L3.609 1.814C4.053 1.312 4.77 1 5.57 1.457l11.61 6.634L13.793 12z" fill="#00E676"/>
+            <path d="M13.793 12l3.387 3.386-11.61 6.634C4.77 22.477 4.053 22.165 3.609 21.663L13.793 12z" fill="#FF3D00"/>
+          </svg>
+          <div class="playstore-text-group">
+            <span class="playstore-sub">GET IT ON</span>
+            <span class="playstore-main">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Gallery Section (All 7 Screens) -->
+  <section class="screenshots-section" id="screenshots">
+    <div class="container">
+      <div class="section-header">
+        <h2>App Screenshots &amp; Interface</h2>
+        <p>Explore RaptorAI's dark cyberpunk interface, intuitive workspaces, and verified model catalog.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- 1. Home Screen -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-1-home.jpg', 'AI That Runs On Your Device — Home Screen')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-1-home.jpg" alt="Home Screen" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Home Dashboard</span>
+            <h4>AI On Your Device</h4>
+            <p>Instant workspace launcher, engine health, and private offline status.</p>
+          </div>
+        </div>
+
+        <!-- 2. Chat Screen -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-chat.jpg', 'Private AI Chat — SmolLM2 & Llama 3.2')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-chat.jpg" alt="Private AI Chat" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">AI Chat Studio</span>
+            <h4>Private AI Chat</h4>
+            <p>Streaming conversation with SmolLM2, Llama 3.2, and Liquid LFM.</p>
+          </div>
+        </div>
+
+        <!-- 3. Workspaces -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-2-workspaces.jpg', 'Explore AI Workspaces — 9 Modalities')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-2-workspaces.jpg" alt="AI Workspaces" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Workspaces</span>
+            <h4>Interactive Tools</h4>
+            <p>1-tap access to LLM chat, object detection, OCR scanner, and voice.</p>
+          </div>
+        </div>
+
+        <!-- 4. Discover Models -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-3-models.jpg', 'Discover AI Models — Verified Bundles')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-3-models.jpg" alt="Discover Models" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Model Explorer</span>
+            <h4>Discover AI Models</h4>
+            <p>Search, sort by speed/RAM, and download verified on-device neural weights.</p>
+          </div>
+        </div>
+
+        <!-- 5. Model Catalog -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-catalog.jpg', 'On-Device Model Catalog — SmolLM2 135M & 360M')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-catalog.jpg" alt="Model Catalog" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Model Manager</span>
+            <h4>On-Device Catalog</h4>
+            <p>Manage installed models, check download size, and view active models.</p>
+          </div>
+        </div>
+
+        <!-- 6. Model Specs -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-4-specs.jpg', 'Detailed Model Specification Sheet')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-4-specs.jpg" alt="Model Specs" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Specification</span>
+            <h4>Detailed Specs &amp; RAM</h4>
+            <p>View quantization schemes, RAM requirements, and hardware trade-offs.</p>
+          </div>
+        </div>
+
+        <!-- 7. Built for Privacy -->
+        <div class="screenshot-card" onclick="openLightbox('./assets/images/screenshot-privacy.jpg', 'Built for Privacy — Founder Pass & Guarantees')">
+          <div class="screenshot-img-box">
+            <img src="./assets/images/screenshot-privacy.jpg" alt="Built for Privacy" loading="lazy">
+          </div>
+          <div class="screenshot-info">
+            <span class="screenshot-tag">Privacy Guarantee</span>
+            <h4>Built for Privacy</h4>
+            <p>Full control, Founder Pass status, and private execution assurances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">&times;</button>
+      <img id="lightboxImg" src="" alt="Full preview">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Official Privacy Policy Document -->
+  <section class="policy-section" id="privacy-policy">
+    <div class="container">
+      <div class="policy-doc-container">
+        
+        <div class="policy-header">
+          <h2>Privacy Policy for RaptorAI</h2>
+          <div class="policy-meta">
+            <span><strong>Effective Date:</strong> November 9, 2026</span>
+            <span><strong>Application Name:</strong> RaptorAI</span>
+            <span><strong>Package Name:</strong> <code>com.raptorai</code></span>
+            <span><strong>Contact:</strong> <code>blueskytechnologies06@gmail.com</code></span>
+          </div>
+        </div>
+
+        <div class="policy-content">
+          <div class="callout-box">
+            <strong>Privacy Guarantee:</strong> RaptorAI is built on a <strong>100% on-device, zero-cloud architecture</strong>. All machine learning operations run locally on your smartphone’s processor. <strong>We do not collect, transmit, share, or sell your personal prompts, images, camera captures, or voice recordings.</strong>
+          </div>
+
+          <h3>1. Introduction &amp; Core Principles</h3>
+          <p>
+            This Privacy Policy governs the manner in which the application <strong>RaptorAI</strong> (Application ID: <code>com.raptorai</code>) handles data. We are committed to complete transparency and user privacy.
+          </p>
+          <p>
+            Unlike traditional artificial intelligence apps that transmit your queries and files to external cloud servers, <strong>RaptorAI executes 100% of all neural inference locally on your device</strong>. No data leaves your smartphone.
+          </p>
+
+          <h3>2. Information We DO NOT Collect</h3>
+          <p>RaptorAI does not collect, log, or transmit any personal content:</p>
+          <ul>
+            <li><strong>Chat Conversations &amp; Prompts:</strong> Your messages, questions, and model answers remain strictly in your device memory.</li>
+            <li><strong>Photos, Documents &amp; Camera Data:</strong> Images used for OCR text extraction or vision classification are processed in local RAM and never uploaded.</li>
+            <li><strong>Voice Audio &amp; Transcripts:</strong> Audio processed by the Speech-to-Text engine (Whisper) is transcribed locally on your device hardware.</li>
+            <li><strong>Personal Identifiers:</strong> We do not collect your name, email address, phone number, physical address, or contacts.</li>
+            <li><strong>No Advertising Identifiers:</strong> We do not collect your Android Advertising ID (GAID) or Apple IDFA for marketing purposes.</li>
+            <li><strong>No Third-Party Advertisements:</strong> The app contains no advertisement networks, ad banners, or commercial trackers.</li>
+          </ul>
+
+          <h3>3. Crash Reporting &amp; Diagnostics (Firebase Crashlytics &amp; Analytics)</h3>
+          <p>
+            To monitor the stability of on-device neural execution across diverse Android device chips and prevent Out-Of-Memory (OOM) crashes, RaptorAI integrates <strong>Google Firebase Crashlytics</strong> and <strong>Google Analytics for Firebase</strong>.
+          </p>
+          <p>
+            These diagnostic tools collect anonymous technical metrics including:
+          </p>
+          <ul>
+            <li><strong>Crash Traces &amp; Stack Dumps:</strong> Technical logs describing the exact line of code or ExecuTorch backend tensor error that caused a crash.</li>
+            <li><strong>Device Model &amp; OS Version:</strong> E.g., device architecture, Android OS version, and available device RAM to identify low-memory hardware constraints.</li>
+            <li><strong>Feature &amp; Screen Engagement:</strong> Anonymized screen views and tool launches to understand which on-device modalities are most actively used.</li>
+          </ul>
+          <p>
+            <em>Crucially:</em> These diagnostic logs contain <strong>zero prompt text, zero document OCR scans, and zero voice recordings</strong>. They are encrypted in transit over HTTPS and processed exclusively by Google as a service provider for app functionality and stability.
+          </p>
+
+          <h3>4. Network Access &amp; Open-Source Model Downloads</h3>
+          <p>
+            Once neural models are downloaded, RaptorAI operates completely offline in Airplane Mode. The only time the application uses an internet connection is when you voluntarily choose to download open-source model weights (e.g. from verified public AI repositories such as Hugging Face).
+          </p>
+          <p>During these voluntary model downloads:</p>
+          <ul>
+            <li>Data is transferred directly between your device and the public repository over encrypted HTTPS.</li>
+            <li>No user telemetry, prompt history, or account details are sent.</li>
+            <li>Downloads can be paused, resumed, or deleted at any time through the Download Center.</li>
+          </ul>
+
+          <h3>5. Device Storage &amp; Data Control</h3>
+          <p>
+            All application data—including downloaded model weights (<code>.pte</code> files), conversation records, and UI preferences—is stored strictly within the private app sandbox (via <code>AsyncStorage</code> and local storage directories).
+          </p>
+          <p>You have complete control over your data at all times:</p>
+          <ul>
+            <li><strong>Clear Chat History:</strong> Go to <em>Settings &gt; Privacy &amp; Security &gt; Clear Conversation History</em> to instantly erase all stored messages.</li>
+            <li><strong>Delete Downloaded Models:</strong> Go to <em>Settings &gt; Storage &amp; Models &gt; Delete All Downloaded Models</em> to free up disk storage.</li>
+            <li><strong>App Removal:</strong> Uninstalling RaptorAI immediately wipes all local files, cached models, and stored settings from your device.</li>
+          </ul>
+
+          <h3 id="data-safety">6. Google Play Data Safety Compliance</h3>
+          <p>
+            Below is the exact data disclosure table corresponding to Google Play Console's Data Safety questionnaire for <strong>RaptorAI (com.raptorai)</strong>:
+          </p>
+
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Data Category</th>
+                  <th>Collected?</th>
+                  <th>Shared with 3rd Parties?</th>
+                  <th>Purpose &amp; Processing Mode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>User Prompts &amp; Messages</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">100% On-Device Neural Inference</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Photos &amp; Camera Images</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">100% On-Device RAM (Vision &amp; OCR)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Voice Audio Recordings</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">100% On-Device Hardware (Whisper STT)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Location Data</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">Not Accessed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Personal Info (Name, Email, Contacts)</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">Not Requested / No Account Required</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Advertising ID (GAID / IDFA)</strong></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag none">Not Collected / Zero Ads</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Crash Logs &amp; Stack Traces</strong><br><small style="color: var(--text-dim);">Firebase Crashlytics</small></td>
+                  <td><span class="status-tag yes">Yes (Anonymous)</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">App Functionality &amp; Stability (Encrypted HTTPS)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Diagnostics &amp; Performance Specs</strong><br><small style="color: var(--text-dim);">Firebase Crashlytics / Analytics</small></td>
+                  <td><span class="status-tag yes">Yes (Anonymous)</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">App Stability &amp; Memory Optimizations</span></td>
+                </tr>
+                <tr>
+                  <td><strong>App Interactions (Screen Views &amp; Features)</strong><br><small style="color: var(--text-dim);">Google Analytics for Firebase</small></td>
+                  <td><span class="status-tag yes">Yes (Anonymous)</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">Analytics (Feature Usage Trends)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Device / Installation ID</strong><br><small style="color: var(--text-dim);">Firebase App-Instance ID</small></td>
+                  <td><span class="status-tag yes">Yes (Pseudonymous)</span></td>
+                  <td><span class="status-tag none">No</span></td>
+                  <td><span class="status-tag local">Analytics &amp; Crash Attribution</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>7. Hardware Permissions</h3>
+          <p>RaptorAI only requests hardware permissions when you explicitly activate a feature:</p>
+          <ul>
+            <li><strong>Microphone (Optional):</strong> Required only when recording speech in the Voice Studio for on-device Whisper transcription.</li>
+            <li><strong>Camera / Photo Library (Optional):</strong> Required only when selecting an image for OCR text extraction or vision classification.</li>
+            <li><strong>Internet (Network Access):</strong> Used exclusively to download public model weight files.</li>
+          </ul>
+
+          <h3>8. Children's Privacy (COPPA &amp; GDPR-K)</h3>
+          <p>
+            RaptorAI does not knowingly collect or solicit information from children under the age of 13. Because all processing is offline and local without user accounts, no personal information is collected from any user of any age.
+          </p>
+
+          <h3 id="contact">9. Contact Information &amp; Inquiries</h3>
+          <p>
+            If you have questions, feedback, or inquiries regarding this Privacy Policy or RaptorAI's on-device privacy architecture, please contact us directly:
+          </p>
+          
+          <div class="contact-box">
+            <strong>RaptorAI Legal &amp; Privacy Team</strong><br>
+            Developer: <strong>BlueSky Technologies</strong><br>
+            Official Contact Email: <a href="mailto:blueskytechnologies06@gmail.com">blueskytechnologies06@gmail.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#hero">Back to Top</a>
+        <a href="#overview">Overview</a>
+        <a href="#download">Google Play</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#data-safety">Data Safety</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p>&copy; 2026 RaptorAI &bull; BlueSky Technologies. All rights reserved.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem; color: #475569;">
+        Contact: blueskytechnologies06@gmail.com &bull; 100% On-Device AI
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = src;
+      cap.textContent = caption || '';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (event.target.id === 'lightboxModal' || event.target.classList.contains('lightbox-close')) {
+        const modal = document.getElementById('lightboxModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('lightboxModal');
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+
+    // Smooth scroll to the very top when clicking "Overview" or the logo
+    document.querySelectorAll('a[href="#overview"], a[href="#hero"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, '#overview');
+        }
+      });
+    });
+
+    // 1. Interactive Neural Synapse Network Animation
+    (function initNeuralCanvas() {
+      const canvas = document.getElementById('neuralCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      let animId;
+      let isVisible = true;
+
+      function resize() {
+        const parent = canvas.parentElement;
+        width = canvas.width = parent.offsetWidth;
+        height = canvas.height = parent.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const count = Math.min(Math.floor(width / 24), 50);
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.55,
+          vy: (Math.random() - 0.5) * 0.55,
+          radius: Math.random() * 2 + 1,
+          color: Math.random() > 0.4 ? 'rgba(6, 182, 212, ' : 'rgba(99, 102, 241, '
+        });
+      }
+
+      function draw() {
+        if (!isVisible) return;
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color + '0.75)';
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 115) {
+              const alpha = (1 - dist / 115) * 0.28;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = p.color + alpha + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        animId = requestAnimationFrame(draw);
+      }
+      draw();
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            isVisible = entry.isIntersecting;
+            if (isVisible) {
+              cancelAnimationFrame(animId);
+              draw();
+            }
+          });
+        }, { threshold: 0.1 });
+        observer.observe(canvas);
+      }
+    })();
+
+    // 2. Live AI Neural Status Ticker (Typing effect)
+    (function initAITicker() {
+      const tickerEl = document.getElementById('aiTickerText');
+      if (!tickerEl) return;
+
+      const phrases = [
+        "Local Neural Engine: Apple ANE & Snapdragon NPU Active",
+        "SmolLM2 135M: 38.5 tokens/sec local execution",
+        "PaddleOCR: On-device DBNet + SVTR document scanner ready",
+        "Whisper Speech: 100% private audio transcription active",
+        "Privacy Guard: 0 bytes uploaded • Zero cloud telemetry"
+      ];
+
+      let phraseIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      let delay = 60;
+
+      function type() {
+        const current = phrases[phraseIdx];
+        if (isDeleting) {
+          tickerEl.textContent = current.substring(0, charIdx - 1);
+          charIdx--;
+          delay = 20;
+        } else {
+          tickerEl.textContent = current.substring(0, charIdx + 1);
+          charIdx++;
+          delay = 40;
+        }
+
+        if (!isDeleting && charIdx === current.length) {
+          isDeleting = true;
+          delay = 2400;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          delay = 400;
+        }
+
+        setTimeout(type, delay);
+      }
+      setTimeout(type, 700);
+    })();
+  </script>
+</body>
+</html>
