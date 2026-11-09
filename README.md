@@ -1,50 +1,54 @@
-# RaptorAI — Privacy Policy & Documentation Page
+# RaptorAI — Privacy Policy & Legal Documentation
 
-This directory contains the complete, self-contained **Privacy Policy and Showcase Website** for RaptorAI.
-
-## Official App & Contact Details
-* **App Name:** RaptorAI
-* **Package ID:** `com.raptorai`
-* **Developer / Publisher:** BlueSky Technologies
-* **Official Contact:** `blueskytechnologies06@gmail.com`
+Official Privacy Policy and Data Safety Documentation for the **RaptorAI** mobile application, published by **BlueSky Technologies**.
 
 ---
 
-## How to Publish on GitHub Pages (From Any GitHub Account / Repository)
+## 🔗 Official Links
 
-1. **Push the `docs/` folder** to whichever GitHub account and repository you want to host it on:
-   ```bash
-   git add docs/
-   git commit -m "Add Privacy Policy and screenshots"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages**:
-   * Open the repository on GitHub.
-   * Go to **Settings** > **Pages** (in the left sidebar).
-   * Under **Build and deployment**:
-     * **Source**: `Deploy from a branch`
-     * **Branch**: `main` (or your default branch)
-     * **Folder**: `/docs`
-   * Click **Save**.
-
-3. **Make Sure the Repository is Public**:
-   * For standard GitHub accounts, GitHub Pages requires the repository to be **Public** so that Google Play bots and external users can view the page without logging into GitHub.
-   * If your main code repository is private, you can simply create a separate, small public repository (e.g. `raptorai-privacy` or `bluesky-policies`), copy the `docs/` contents into it, and enable GitHub Pages there!
+* **Live Privacy Policy Website:** [https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/](https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/)
+* **Direct Privacy Policy Section:** [https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/#privacy-policy](https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/#privacy-policy)
+* **Google Play Data Safety Disclosure:** [https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/#data-safety](https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/#data-safety)
+* **Google Play Store Listing:** [Download RaptorAI on Google Play](https://play.google.com/store/apps/details?id=com.raptorai)
 
 ---
 
-## URL to Submit in Google Play Console
+## 📋 Application & Publisher Details
 
-Once published, your page URL will be:
+| Field | Details |
+| :--- | :--- |
+| **Application Name** | RaptorAI |
+| **Package Identifier** | `com.raptorai` |
+| **Developer / Publisher** | BlueSky Technologies |
+| **Contact Email** | `blueskytechnologies06@gmail.com` |
+| **Platform** | Android |
+| **Architecture** | 100% On-Device Neural Inference |
+
+---
+
+## 🛡️ Core Privacy Principles
+
+* **100% On-Device Execution:** All artificial intelligence operations (compact LLM chat, PaddleOCR document scanning, vision analysis, and Whisper speech transcription) run directly on your smartphone processor. Prompts, documents, camera images, and audio recordings never leave the device.
+* **Zero Telemetry & Tracking:** No personal identity data, advertising identifiers (GAID), or behavioral tracking profiles are collected or shared. The application contains no third-party advertisements or commercial tracking SDKs.
+* **No Account Required:** RaptorAI requires no sign-up, registration, or external authentication. All settings and conversation logs are stored exclusively in the application's local sandbox on your device.
+* **Anonymous Stability Diagnostics:** Only anonymized technical crash logs and stack traces are processed via Firebase Crashlytics to monitor hardware stability and prevent memory constraints. These diagnostic logs contain zero user prompt text, document content, or voice data.
+* **User Data Control:** Users can instantly wipe local conversation history or remove downloaded model files at any time via in-app settings. Completely uninstalling the app permanently deletes all local data.
+
+---
+
+## 📍 Google Play Console Submission
+
+For the Google Play Console **Policy > App content > Privacy policy** field, use:
+
 ```text
-https://<account-username>.github.io/<repo-name>/
+https://blueskytechnologies06-creator.github.io/RaptorAI-PrivacyPolicy/#privacy-policy
 ```
 
-In Google Play Console, go to:
-**Policy > App content > Privacy policy**
-and paste your URL:
-```text
-https://<account-username>.github.io/<repo-name>/#privacy-policy
-```
-Google Play Console and Play Store users will be able to access the Privacy Policy directly.
+---
+
+## 📬 Contact & Inquiries
+
+For any questions, feedback, or legal inquiries concerning this Privacy Policy:
+
+* **Entity:** BlueSky Technologies — Legal & Privacy Team
+* **Email:** [blueskytechnologies06@gmail.com](mailto:blueskytechnologies06@gmail.com)
